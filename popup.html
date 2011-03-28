@@ -62,7 +62,7 @@
 			if (localStorage["uncheckedUpdate"] == "true") {
 				chrome.tabs.create({url:chrome.extension.getURL("options.html#update")});
 				chrome.pageAction.setIcon({tabId: tab.id, path:"img/icons/icon19.png"});
-				chrome.pageAction.setTitle({tabId: tab.id, title:"Minimalist for Google Reader Options"});
+				chrome.pageAction.setTitle({tabId: tab.id, title:"Minimalist for Facebook Options"});
 				localStorage["uncheckedUpdate"] = false;
 			} else {
 				chrome.tabs.create({url:chrome.extension.getURL("options.html")});
@@ -72,9 +72,22 @@
 			chrome.extension.sendRequest({action: 'reload'}, function(response) {});
 		}
 	</script>
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-22336317-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
 </head>
 <body>
-	<h1>Minimalist<br /><span>Google Reader</span></h1>
+	<h1>Minimalist<br /><span>Facebook</span></h1>
 	<input type="button" onclick="options()" value="Options" /><br />
 	<input type="button" onclick="toggle()" value="Toggle on/off" /><br />
 	<input type="button" onclick="reload()" value="PANIC!" />

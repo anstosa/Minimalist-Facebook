@@ -1,125 +1,16 @@
 == ANNOUNCEMENTS ==
 
-  Well it's relatively stable, still not as full featured as I'd like but the word got out a bit faster than I expected
-  Consider it tentatively out of beta.
+  **THIS IS A BETA PRODUCT**
+
+  Please post issues on the tracker or email me at ansel@anselsantosa.com
+  DO NOT POST ISSUES IN THE COMMENTS
 
 
 == WHAT DOES IT DO? ==
 
-  It is a personalized solution for those who are tired of useless and distracting elements in the Google Reader interface.
+  It is a personalized solution for those who are tired of useless and distracting elements in the Facebook interface.
   It removes as much or as little as you want. It also adds functionality if you so choose.
   Look around the options page to see what it does first hand. Link below.
-
-
-== OPTIONS ==
-
-  The Options page is easy to use and interactive features:
-  * Screenshots when you mouseover options so you know what you're changing
-  * Organized tabbed navigation
-  * See it in action here: [http://www.anselsantosa.com/sites/MinimalistGoogleReader/options.html]
-
-  The following elements can be modified individually:
- == GENERAL
-  * Hide Minimalist for Google Reader options icon
-  * Show favicon counter
-  * Open items in background with [ v ]
-  * Show transition animations
-  * Rounded corners on input fields and textareas
-  * Custom CSS input
- == THEME
-  * Customize background color
-  * Customize border color
-  * Customize link color
-  * Customize current item highlight
-  * Customize button colors
- == GOOGLE BAR
-  * Hide Google bar [click to toggle when hidden]
-  * Make Google bar invisible until hover
-  * Hide background & border
-  * Hide Google links
-  * Replace Google links with custom menu
-  * Hide logged in
-  * Hide Labs icon
-  * Hide Settings link
-  * Hide Help link
-  * Hide Sign out link
- == HEADER
-  * Hide header [click to toggle when hidden]
-  * Hide logo
-  * Use custom logo
-  * Hide all search
-  * Hide search filter dropdown
-  * Hide search button
- == MAIN
-  * Hide title bar
-  * Hide expanded/list options
-  * Hide toolbar
-  * Hide new/all options
-  * Hide Mark all as read button
-  * Hide Refresh button
-  * Hide view settings
-  * Hide viewer footer
-  * Hide Home sidebar
-  * Hide Home tips
-  * Hide Home Reader Blog
-  * Hide Home Footer
-  * Custom item body width
-  * Hide break-out icon
-  * Hide item footer
-  * Hide footer text
-  * Hide Add star
-  * Hide Like
-  * Hide Share
-  * Hide Share with note
-  * Hide Email
-  * Hide Keep unread
-  * Hide Edit tags
- == NAVIGATION
-  * Hide Add a subscription button
-  * Hide navigation
-  * Custom nav width
-  * Hide Home section
-  * Hide icons
-  * Dim icons
-  * Hide All items link
-  * Hide Starred items link
-  * Hide Your stuff section
-  * Hide Shared items
-  * Hide Notes
-  * Hide Trends
-  * Hide Browse
-  * Hide People you follow section
-  * Hide new comments icon
-  * Hide Sharing settings link
-  * Hide Explore section
-  * Hide Manage subscriptions
- == MORE?
-  * Leave feature suggestions in the Issue Tracker: [http://code.google.com/p/minimalist-google-reader/issues]
-
-
-== HOW DO I WORK IT? ==
-
-  All the instructions you need are on the support page:
-  [http://code.google.com/p/minimalist-google-reader/wiki/Support]
-
-
-== ISSUES TRACKING ==
-
-  I test as thoroughly as I can before each release, but bugs are bound to get through.
-  Read, track, and submit bugs in the Issue Tracker:
-  [http://code.google.com/p/minimalist-google-reader/issues]
-
-
-== QUESTION? ==
-
-  * Ping me on Twitter: @anstosa
-  * Email me: ansel@anselsantosa.com
-
-
-== COMING SOON ==
-
-  Want to recommend a feature? Submit it in the Issues Tracker:
-  [http://code.google.com/p/minimalist-google-reader/issues]
 
 
 == PERMISSIONS ==
@@ -146,36 +37,124 @@
   Still don't trust me? Go to [https://github.com/anstosa/Minimalist-Google-Reader] to see the entire source code.
 
 
+== OPTIONS ==
+
+  The Options page is easy to use and interactive features:
+  * Screenshots when you mouseover options so you know what you're changing
+  * Organized tabbed navigation
+  * See it in action here: [http://www.anselsantosa.com/sites/MinimalistFacebook/options.html]
+
+  The following elements can be modified individually:
+ == GENERAL
+  * Hide Minimalist for Facebook options icon
+  * Show favicon counter
+  * Show transition animations
+  * Hide Footer
+  * Custom CSS input
+ == THEME
+  * Minimalist-style look
+  * Full width layout
+  * Customize background color
+  * Customize accent color
+  * Show hover highlights
+ == TOOLBAR
+  * Hide toolbar [click to toggle when hidden]
+  * Floating Toolbar
+  * Hide logo
+  * Hide Friend requests icon
+  * Hide Messages icon
+  * Hide Notifications icon
+  * Hide Search
+  * Hide Home link
+  * Hide Profile link
+ == NAVIGATION
+  * Hide navigation [click to toggle when hidden]
+  * Floating navigation
+  * Hide Profile section
+  * Hide News Feed link
+  * Hide Messages link
+  * Hide Events link
+  * Hide Friends link
+  * Hide Create group...
+  * Hide Navigation section
+  * Hide "More" link
+  * Hide Chat section
+  * Hide Chat search box
+ == SIDEBAR
+  * Hide sidebar [click to toggle when hidden]
+  * Hide Events
+  * Hide Find More Friends
+  * Hide Requests
+  * Hide Pokes
+  * Hide Recommended
+  * Hide People You May Know
+  * Hide Ads
+ == NEWS FEED
+  * Show true timestamps
+  * Photo zoom on hover
+  * Disable theater mode
+  * Hide idle
+  * Hide bottom list
+  * Hide Share links
+  * Hide Top/Recent
+  * Hide Applications stories
+  * Hide event stories
+  * Hide friend stories
+  * Hide group stories
+  * Hide like stories
+  * Hide link stories
+  * Hide note stories
+  * Hide photo stories
+  * Hide place stories
+  * Hide profile picture stories
+  * Hide relationship status stories
+  * Hide status stories
+  * Hide video stories
+  * Hide wall post stories 
+ == MORE?
+  * Leave feature suggestions in the Issue Tracker: [http://code.google.com/p/minimalist-facebook/issues]
+
+
+== HOW DO I WORK IT? ==
+
+  All the instructions you need are on the support page:
+  [http://code.google.com/p/minimalist-facebook/wiki/Support]
+
+
+== ISSUES TRACKING ==
+
+  I test as thoroughly as I can before each release, but bugs are bound to get through.
+  Read, track, and submit bugs in the Issue Tracker:
+  [http://code.google.com/p/minimalist-facebook/issues]
+
+
+== QUESTION? ==
+
+  * Ping me on Twitter: @anstosa
+  * Email me: ansel@anselsantosa.com
+
+
+== COMING SOON ==
+
+  Want to recommend a feature? Submit it in the Issues Tracker:
+  [http://code.google.com/p/minimalist-facebook/issues]
+
+
 == CHANGELOG ==
 
- == 0.5.2 [8 MAR]
-  * Fixed: Mangage and sharing settings links not hiding.
-  * Fixed: Item footer not hiding in list view
-  * Fixed: Top item in list view not clickable
- == 0.5.1 [5 MAR]
-  * Added: Hide Home Reader Blog
-  * Added: Hide Home Footer
-  * Added: [ v ] opens items in background tabs
-  * Added: Custom item body width
-  * Added: Dim icons until mouseover
-  * Improved: Opening links in background doesn't flash the page
-  * Fixed: Menu dropdown icon hidden in subscriptions
-  * Fixed: Broken links in options
-  * Fixed: Break-out icon not hiding
-  * Fixed: Broken hover images in options
- == 0.5.0 [4 MAR]
+ == 0.5.0 [XX MAR]
   * First!
 
 
 == CREDITS ==
 
-  Most of Minimalist for Google Reader is written from the ground-up but some things are just perfect already:
+  Most of Minimalist for Facebook is written from the ground-up but some things are just perfect already:
   * favicon unread counter by Peter Wooley 
-  Full details on the About page: [http://www.anselsantosa.com/sites/MinimalistGoogleReader/options.html#abo] 
+  Full details on the About page: [http://www.anselsantosa.com/sites/MinimalistFacebook/options.html#abo] 
 
 
 == LEGAL ==
 
-  I am not a Google Employee or officially affiliated with Google in any way. This extension is not endorsed by Google.
-  Google, Google Reader, and the Google Reader logo are trademarks of Google Inc.
-  Use of these trademarks is subject to Google Permissions.
+  I am not a Facebook Employee or officially affiliated with Facebook in any way. This extension is not endorsed by Facebook.
+  Facebook and the Facebook logo are trademarks of Facebook Inc.
+  Use of these trademarks is subject to Facebook Permissions.

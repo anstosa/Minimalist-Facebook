@@ -1,6 +1,6 @@
 {
-	"name": "Minimalist for Google Reader™",
-	"version": "0.5.2",
+	"name": "Minimalist for Facebook™ (beta)",
+	"version": "0.5.0",
 	"description": "Individually hide almost 50 interface elements and add custom logos, and more...",
 	"icons": {
          "16": "img/icons/icon16.png",
@@ -8,13 +8,18 @@
 		"128": "img/icons/icon128.png" },
 	"page_action": {
 		"default_icon": "img/icons/icon19.png",
-		"default_title": "Minimalist for Google Reader Options",
+		"default_title": "Minimalist for Facebook Options",
 		"default_popup": "popup.html"
 	},
 	"background_page": "background.html",
 	"content_scripts": [ {
-		"matches": [ "http://www.google.com/reader/*", "https://www.google.com/reader/*" ],
+		"matches": [ "http://www.facebook.com/*", "https://www.facebook.com/*" ],
 		"js": [ "js/stylesheet.js" , "js/active.js", "js/favicon.js" ],
+		"run_at": "document_start",
+		"all_frames": true
+	}, {
+		"matches": [ "http://www.facebook.com/*", "https://www.facebook.com/*" ],
+		"js": [ "js/active.js", "js/favicon.js" ],
 		"run_at": "document_end",
 		"all_frames": true
 	}, {
@@ -27,7 +32,7 @@
 	"permissions": [
 		"tabs",
 		"bookmarks",
-		"http://www.google.com/reader/*",
-		"https://www.google.com/reader/*"
+		"http://www.facebook.com/*",
+		"https://www.facebook.com/*"
 	]
 }

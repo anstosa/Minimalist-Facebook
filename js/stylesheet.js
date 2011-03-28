@@ -7,191 +7,164 @@
 
 chrome.extension.sendRequest({elements: 'o'}, function(response) {
 	var css = "";
-
-	css += "input:not(#search-restrict-input), textarea { outline: 0; margin: 1px !important; border: 1px solid !important; border-color: #585858 #B0B0B0 #B0B0B0 #B0B0B0 !important; }\n";
-	css += "input:focus, textarea:focus { outline: 0; margin: 0px !important; border: 2px solid #BCF !important; }\n";
-	css += "#nav:not([min ~= 'hideN']) { width: " + response.o.navW + "px !important; }\n";
-	css += "#chrome { margin-left: " + response.o.navW + "px; }\n";
-	css += "#chrome[min ~= 'hideN'] { margin-left: 0; }\n";
-	css += "#gbar, #guser { height: 20px; padding-bottom: 0 !important; }\n";
-	css += ".subscribe-button { padding-left: 0 !important; background: none; }\n";	
-	
-	/*css += "#nav { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAK8CAMAAAD/Ke59AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAE5QTFRFHx8fMzMzMjIyNjY2MTExMDAwLi4uLy8vLS0tNTU1NDQ0Hh4eKysrHR0dLCwsKioqKCgoKSkpICAgJSUlJiYmJycnJCQkISEhIyMjIiIiHhf88QAAAR9JREFUeNrs1NtuwyAMBmCS5tSWcgiHwPu/6LwsEm2BhATSadJuflnflYWN0eVCKSJkHJFSVYUeD87Rv51s9Y9dr87qMw3jFOO+8W1jLGi3235rmrDdX0xKsPsZVlWFrH0ySmdrC1hdpxpEAev7b1O+qbA1TaZxOk2e8ah1IesWa31rd5sQYAjFTfmmPOt7Z8NQyBhzJmWydd26EfI5G4aQQSyG8YYpdchIyMhe0xqu6DgKkWUYZ5qUUYPLsBjEm1H6+wY/ajbOU0z7phcTopgx5gy2c8UgnE3TixlTwpRaN5j0umlhrWf6kEmZYMZsGrzkToNIMCEyzZioQVfZpkOmS5i1YNYeNKiiZkyCzV2FzIbMJttcnWDWtz8SXwIMAM8UwWqEpG2GAAAAAElFTkSuQmCC) repeat-x #222 !important;}"
-		+ "#nav [class*='link'], #nav [id*='link'], #nav [class*='lk'], #nav [id*='lk'] { color: #fff !important; }"
-		+ ".scroll-tree li, .lhn-section  { background: transparent !important; background-color: transparent !important; }"
-		+ "#sub-tree::-webkit-scrollbar { width: 0px; }";*/
-
+	var toolbar = chrome.extension.getURL("img/Pvubnmvx_0f.png");
+	var background = chrome.extension.getURL("img/bg.png");
+	// MINIMALIST
+		if (response.o.min)
+			css += "body { background: url(\"" + background + "\") repeat-x #222 !important; }"
+				+ "#contentCol { background-color: #f2f2f2; box-shadow: 0 0 10px rgba(0,0,0,.35), 0 0 20px rgba(0,0,0,.35), 0 0 35px rgba(0,0,0,.35), 0 0 55px rgba(0,0,0,.35); }"
+				+ ".hasLeftCol #contentCol, .hasLeftCol #mainContainer { border: none; }"
+				+ "#leftCol, #leftCol * { z-index: -9999; }"
+				+ "#blueBar { box-shadow: 0 0 5px rgba(0,0,0,.45), 0 0 10px rgba(0,0,0,.45), 0 0 25px rgba(0,0,0,.45) !important; }"
+				+ "#pageLogo a { background-image: none !important; font-family: 'Raleway', sand-serif; }"
 	// GENERAL
 		if (response.o.trans)
 			css += "* { -webkit-transition-property: background-color, border-color, color, opacity, width, top; -webkit-transition-duration: .15s; -webkit-transition-timing-function: ease-out; }\n";
-		if (response.o.corners)
-			css += "input, textarea { -webkit-border-radius: 5px; }\n";
-		if (response.o.backC) {
-			css += "body, .scroll-tree li, .lhn-section, #entries .entry { background: " + response.o.backCLR + " !important;  background-color: " + response.o.backCLR + " !important; }\n";
-		}
-		if (response.o.borders) {
-			css += "#chrome-header, #chrome-view-links, #chrome-lhn-toggle:hover, #lhn-selectors .selected, #lhn-selectors .selected:hover, .scroll-tree li .tree-link-selected, .scroll-tree li .tree-link-selected:hover, .scroll-tree li a.tree-link-selected .tree-item-action-container { background: " + response.o.borderCLR + " !important; background-color: " + response.o.borderCLR + " !important; }\n";
-			css += "#viewer-footer, #viewer-header, #chrome-lhn-toggle, .selector:not(.selected):hover, a.link:hover { background: " + lighten(lighten(response.o.borderCLR)) + " !important; background-color: " + lighten(lighten(response.o.borderCLR)) + " !important; }\n";
-			css += "a.link:hover div:last-child { background-color: " + lighten(lighten(response.o.borderCLR)) + "; }\n";
-			css += "#viewer-container { background: " + lighten(lighten(lighten(response.o.borderCLR))) + " !important; background-color: " + lighten(lighten(lighten(response.o.borderCLR))) + " !important; }\n";
-			css += ".selected > a.link:hover { background: transparent !important; background-color: transparent !important; }\n";
-			css += "#current-entry .card, #viewer-footer, #viewer-top-controls, #chrome, .lhn-section, .gbh, .gbd, #entries.list #current-entry .collapsed, #entries.list #current-entry.expanded, #entries.list #current-entry.expanded .entry-actions { border-color: " + response.o.borderCLR + " }\n";
-			css += "#chrome-lhn-toggle-icon { display: none; }\n";
-		}
-		if (response.o.BTN) {
-			css += ".goog-button-base-content { color: " + response.o.BTNcolor + " !important; }\n";
-			css += ".goog-button-base-inner-box { background: -webkit-gradient(linear,0% 40%,0% 70%,from(" + response.o.BTNbottom + "),to(" + response.o.BTNtop + ")) !important; }\n";
-			css += ".goog-button-base-top-shadow { display: none; }\n";
-			css += ".goog-button-base-pos { border-color: " + response.o.BTNborder + " !important; }\n";
-		} else {
-			css += ".goog-button-base-content { color: #000 !important; }\n";
-			css += ".goog-button-base-inner-box { background: -webkit-gradient(linear,0% 40%,0% 70%,from(#f9f9f9),to(#ded5de)) !important; }\n";
-			css += ".goog-button-base-top-shadow { display: none; }\n";
-			css += ".goog-button-base-pos { border-color: #bbb !important; }\n";
-		}
-		if (response.o.linkC)
-			css += "[class *= 'link'], [id *= 'link'], [class *= 'lk'], [id *= 'lk'], .st-more, .mv-dayname, .dp-sb-cur, .mg-print, .mg-refresh, .ui-dtsr-unselected, .qnb-quickadd, a, a[class *= 'gb'] { color: " + response.o.linkCLR + " !important; }\n";
-	// GOOGLE BAR
-		if (response.o.gbar)
-			css += "#gbar { display: none !important; }\n";
-		if (response.o.gbarH) {
-			css += "#gbarToggle { background-color: rgb(0,0,0,0); height: 10px !important; cursor: pointer !important;}\n";
-			css += "#gbarToggle:hover { background-color: rgba(0,0,0,.5); }\n";
-			css += ".gbh, .gbd { top: 34px; }\n";
-			css += "#logo-container[min ~= 'hideG'] { top: 50px !important; }\n";
-			css += "#logo-search[min ~= 'hideG'] { top: 50px !important; }\n";
-			css += "#search[min ~= 'hideG'] { top: 75px !important; }\n";
-		}
-		if (response.o.gbarO) {
-			css += "#guser, #gbar { opacity: 0; -webkit-transition-delay: .25s; }\n";
-			css += "#gbar:hover, #guser:hover { opacity: 1; }\n"
-		}
-		if (response.o.gbarB)
-			css += ".gbh, .gbd { border: 0 !important; }\n";
-	// HEADER
-		if (response.o.header || response.o.gbarH) {
-			css += "[min ~= 'hideH'], [min ~= 'hideH'] *, [min ~= 'hideG'], [min ~= 'hideG'] * { opacity: 0; margin: 0 !important; padding: 0 !important; height: 0 !important; }\n";
-			css += "[min ~= 'hideH'] *, [min ~= 'hideG'] * { display: none; }\n";
-		}
-		if (response.o.header) {
-			//css += "[min ~= 'hideH'] #ntowner { margin-top: -20px !importnat; opacity: 1 !important; }\n";
-		}
-		if (response.o.header && !response.o.gbarH) {
-			css += "#headerToggle { z-index: 9999; background-color: rgba(0,0,0,0); position: absolute; top: 25px; height: 10px !important; width: 100%; cursor: pointer !important;}\n";
-			css += "#headerToggle:hover { background-color: rgba(0,0,0,.15); }\n";
-		}
-		if (response.o.logo) {
-			css += "#logo { background: url(" + response.o.logoSRC + ") !important; background-position: 0% 0%; background-repeat: no-repeat no-repeat; }\n";
-		}
-		if (response.o.logoH) {
-			css += "#logo-container { display: none !important; }\n";
-			css += "#search { left: 10px !important; }\n";
-		}
-		if (response.o.s_all)
-			css += "#search { display: none !important; }\n";
-		if (response.o.s_filter)
-			css += "#search-restrict { display: none !important; }\n";
-		if (response.o.s_button)
-			css += "#search-submit { display: none !important; }\n";
-	// MAIN
-		if (response.o.t_title) {
-			css += "#chrome-header { display: none !important; }\n";
-			if (response.o.borders)
-				css += "#chrome-viewer-container { border-top: 1px solid " + response.o.borderCLR + " !important; }\n";
-			else css += "#chrome-viewer-container { border-top: 1px solid #C2CFF1 !important; }\n";
-		}
-		if (response.o.t_el)
-			css += "#chrome-view-links { display: none; }\n";
-		if (response.o.t_top)
-			css += "#viewer-header { display: none; }\n";
-		if (response.o.n_na)
-			css += "#viewer-all-new-links { display: none; }\n";
-		if (response.o.n_read)
-			css += "#mark-all-as-read-split-button { display: none; }\n";
-		if (response.o.t_refresh)
-			css += "#viewer-refresh { display: none; }\n";
-		if (response.o.t_view)
-			css += "#stream-prefs-menu { display: none; }\n";
 		if (response.o.footer)
-			css += "#viewer-footer { display: none; }\n";
-		if (response.o.h_side)
-			css += "#right-section { display: none; }\n";
-		if (response.o.h_tips)
-			css += "#tips { display: none; }\n";
-		if (response.o.h_blog)
-			css += "#team-messages { display: none; }\n";
-		if (response.o.h_footer) {
-			css += "#overview-footer { display: none; }\n";
-			css += "#sections { border: 0 !important; border-color: transparent !important; }\n";
+			css += "#footerContainer { display: none; }\n";
+	// THEME
+		if (response.o.fullW) {
+			css += ".fbx #globalContainer { width:auto; margin:auto 7px; }\n";
+			css += ".fbx #fbf-page-head-container { width:auto; }\n";
 		}
-		if ((response.o.itemW != 0) && (response.o.itemW != 650))
-			css += ".entry .entry-body, .entry .entry-title, .entry .entry-likers { max-width: " + response.o.itemW + "px !important; }\n";
-		if (response.o.i_break)
-			css += ".entry-title-go-to { background: none !important; }\n";
-		if (response.o.i_footer)
-			css += ".entry-actions { display: none; }\n";
-		if (response.o.i_text) {
-			css += ".entry-actions span, .entry-actions span span { display: inline-block; width: 16px !important; margin: 0 5px 0 0 !important; padding: 0 !important; color: transparent !important; }\n";
-			css += ".action-area { margin-top: -4px !important; }\n";
-			css += ".entry-actions span:nth-of-type(7) { display: none !important; }\n";
+		if (response.o.backC) {
+			css += "body, .hasLeftCol #pageFooter, #contentCurve, #chatFriendsOnline > div:nth-child(2), #contentCol { background: " + response.o.backCLR + " !important;  background-color: " + response.o.backCLR + " !important; }\n";
+			css += ".uiSideNav .item, .uiSideNav .subitem { border-bottom: 1px solid transparent; }\n";
+			css += "#chatFriendsOnline input { background-color: #fff; }\n";
 		}
-		if (response.o.i_star)
-			css += ".star { display: none !important; }\n";
-		if (response.o.i_like)
-			css += ".like { display: none !important; }\n";
-		if (response.o.i_share)
-			css += ".broadcast { display: none !important; }\n";
-		if (response.o.i_note)
-			css += ".broadcast-with-note { display: none !important; }\n";
-		if (response.o.i_email)
-			css += ".email { display: none !important; }\n";
-		if (response.o.i_unread)
-			css += ".read-state { display: none !important; }\n";
-		if (response.o.i_tags)
-			css += ".tag { display: none !important; }\n";
+		if (response.o.accent) {
+			css += ".uiComposerWhiteMessageBox .uiComposerMessageBox { background: none; }\n";
+			css += "#blueBar { background: " + response.o.accentCLR + " !important; background-color: " + response.o.accentCLR + " !important; }\n";
+			css += "#pageLogo > a, .jewel > a { background-image: url( " + toolbar + " ) !important; background-color: transparent; }\n";
+			css += "#pageNav a:hover, #pageLogo > a:hover, .jewel:not(.openToggler) > a:hover { background-color: rgba(255,255,255,.15) !important; }\n";
+			css += ".hasLeftCol #contentCol, .hasLeftCol #contentCurve, .hasLeftCol #mainContainer, #navSearch .uiTypeahead, #navSearch .uiTypeahead .wrap, #headNav, .fbNubFlyoutTitlebar { border-color: rgba(0,0,0,.5) !important;}\n";
+			css += "#headNav, .fbNubFlyoutTitlebar { background: " + lighten(response.o.accentCLR, 35, 1) + " !important; background-color: " + lighten(response.o.accentCLR, 35, 1) + " !important; }\n";
+			css += "#jewelBoxNotif span.blueName, #jewelBoxMail div.author, a, input[name *= 'view_all'], .UIActionLinks_bottom a, .UIActionLinks_bottom button.as_link, .UIActionLinks_left, .UIActionLinks_right, .feedback_toggle_link .feedback_show_link, .feedback_toggle_link .feedback_hide_link, .UIActionLinks .comment_link, .UIActionLinks .comment_link input, button.as_link, .GBThreadRow .line a.link, #navAccount ul a, #navAccount ul .logoutButton input { color: " + response.o.accentCLR + "; }\n";
+			css += "#jewelCase .jewelHighlightItem li a:hover,#jewelCase .jewelHighlightItem li a:active,#jewelCase .jewelHighlightItem li a:focus, #navAccount ul a:hover, #navAccount ul .logoutButton input:hover { background: " + lighten(response.o.accentCLR, 0, .65) + " !important; background-color: " + lighten(response.o.accentCLR, 0, .65) + " !important; }\n";
+			css += "#pageNav > li > a { color: #fff; }\n";
+			css += ".uiHeaderSection, .uiSideHeader, #jewelCase .jewelHighlightItem li a:hover,#jewelCase .jewelHighlightItem li a:active,#jewelCase .jewelHighlightItem li a:focus, #navAccount ul a:hover, #navAccount ul .logoutButton input:hover { border-color: " + lighten(response.o.accentCLR, 0, .15) + " !important; }\n";
+			css += ".uiHeaderSection, .uiSideHeader, .uiSideNav .selectedItem .item, .uiSideNav .selectedItem .item:hover, .uiSideNav ul .selectedItem .subitem, .uiSideNav ul .selectedItem .subitem:hover { background: " + lighten(response.o.accentCLR, 0, .15) + " !important; background-color: " + lighten(response.o.accentCLR, 0, .15) + " !important; }\n";
+			css += ".uiSideNav .item:hover { background: " + lighten(response.o.accentCLR, 0, .05) + " !important; background-color: " + lighten(response.o.accentCLR, 0, .05) + " !important; }\n";
+			css += ".uiUfi .ufiItem { background: " + lighten(response.o.accentCLR, 0, .1) + " !important; background-color: " + lighten(response.o.accentCLR, 0, .1) + " !important; border-color: " + lighten(response.o.accentCLR, 0, .2) + " !important; }\n";
+			css += ".uiUfi .ufiNub i { background: transparent !important; }\n";
+		}
+		if (response.o.high)
+			css += ".uiUnifiedStory:hover { background-color: " + lighten(response.o.accentCLR, 0, .05) + " !important; }\n";
+	// TOOLBAR
+		if (response.o.tbarH) {
+			css += "#tbarToggle { background: rgb(0,0,0,0); height: 10px !important; cursor: pointer !important;}\n";
+			css += "#tbarToggle:hover { background: -webkit-gradient(linear, left bottom, right bottom, color-stop(.05, rgba(0,0,0,0)), color-stop(.35, rgba(0,0,0,.5)), color-stop(.65, rgba(0,0,0,.5)), color-stop(.95, rgba(0,0,0,0))); }\n";
+			css += "#blueBar[min ~= 'hideT'] { height: 0px !important; }\n";
+			css += "#globalContainer > [min ~= 'hideT'] { height: 0px !important; opacity: 0; overflow: hidden; }\n";
+			css += "#globalContainer > div [min ~= 'hideT'] { border-top: 1px solid; }\n";
+			css += "#pageHead { padding-top: 0; }\n";
+		}
+		if (response.o.t_float || response.o.min) {
+			css += "#blueBar { position: fixed; box-shadow: 0 0 15px rgba(0,0,0,.25),  0 0 10px rgba(0,0,0,.25); z-index: 9998; }\n";
+			css += "#globalContainer > div:first-child { position: fixed; z-index: 9999; width: inherit;}\n";
+			css += "#content { padding-top: 41px; }\n";
+		}
+		if (response.o.logo)
+			css += "#pageLogo { visibility: hidden; }\n";
+		if (response.o.t_friends)
+			css += "#requestsWrapper { display: none; }\n";
+		if (response.o.t_messages)
+			css += "#mailWrapper { display: none; }\n";
+		if (response.o.t_notifications)
+			css += "#notificationsWrapper { display: none; }\n";
+		if (response.o.t_search)
+			css += "#navSearch { display: none; }\n";
+		if (response.o.t_home)
+			css += "#pageNav > li:nth-child(2) { display: none; }\n";
+		if (response.o.t_profile)
+			css += "#pageNav > li:nth-child(3) { display: none; }\n";
 	// NAVIGATION
-		if (response.o.nav) {
-			css += "#navToggle { z-index: 999; background-color: rgba(0,0,0,0); width: 10px !important; cursor: pointer !important; }\n";
+		if (response.o.navH) {
+			css += "#navToggle { float: left; z-index: 999; background-color: rgba(0,0,0,0); width: 10px !important; height: 600px !important; cursor: pointer !important; }\n";
 			css += "#navToggle:hover { background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,.15)), to(rgba(0,0,0,0))); }\n";
-			css += "td[min ~= 'hideN'] { width: 0px !important; opacity: 0 !important; overflow: hidden !important; }\n";
-			css += "#sidebar:not([min ~= 'hideN']) { width: " + (parseInt(response.o.navW) + 10) + "px !important; }\n";
-			css += "#sidebar, #sidebar[min ~= 'hideN'] + #mainnav { border-left: 10px solid #fff; }\n";
-			//css += "#sidebar, #nav { width: " + response.o.navW + "px; opacity: 1; }\n";
+			css += "#leftCol { width: 169px; margin-left: 10px; }\n";
 		}
-		if (response.o.navA)
-			css += "#lhn-add-subscription-section { display: none; }\n";
-		if (response.o.n_icons) {
-			css += ".selector-icon, .scroll-tree .icon, .scroll-tree .sub-icon, #recommendations-tree .sub-icon { display: none; }\n";
-			css += ".scroll-tree .name { padding-left: 0;}"
+		if (response.o.navF || response.o.min)
+			css += "#leftCol { position: fixed; top: 41px; }\n";
+		if (response.o.n_profile)
+			css += "#pagelet_main_nav { display: none; }\n";
+		if (response.o.n_news)
+			css += "#pagelet_main_nav li:nth-child(1) { display: none; }\n";
+		if (response.o.n_messages)
+			css += "#pagelet_main_nav li:nth-child(2) { display: none; }\n";
+		if (response.o.n_events)
+			css += "#pagelet_main_nav li:nth-child(3) { display: none; }\n";
+		if (response.o.n_friends)
+			css += "#pagelet_main_nav li:nth-child(4) { display: none; }\n";
+		if (response.o.n_groups)
+			css += "#pagelet_groups_nav, #pagelet_connection_search_nav { display: none; }\n";
+		if (response.o.n_more)
+			css += ".navMoreLess { display: none; }\n";
+		if (response.o.n_chat)
+			css += "#pagelet_friends_online { display: none; }\n";
+		if (response.o.n_search)
+			css += "#chatFriendsOnline > div:nth-child(2) { display: none; }\n";
+	// SIDEBAR
+		if (response.o.s_all) {
+			css += "#rightCol { display: none; }\n";
+			css += "#contentArea, .uiUfi { width: 100% !important; }\n";
+			css += "#contentCol { padding-right: 40px }\n";
 		}
-		if (response.o.n_dim) {
-			css += ".scroll-tree .icon { opacity: .5; }\n";
-			css += ".scroll-tree li:hover > a > .icon { opacity: 1;}"
+		if (response.o.s_events)
+			css += "#pagelet_eventbox { display: none; }\n";
+		if (response.o.s_find)
+			css += "#pagelet_connectbox { display: none; }\n";
+		if (response.o.s_requests)
+			css += "#pagelet_reqbox { display: none; }\n";
+		if (response.o.s_pokes)
+			css += "#pagelet_pokebox, #pagelet_netego_pokes { display: none; }\n";
+		if (response.o.s_recommended)
+			css += "#pagelet_netego { display: none; }\n";
+		if (response.o.s_people)
+			css += "# { display: none; }\n";
+		if (response.o.s_ads)
+			css += "#pagelet_adbox, #pagelet_ego_pane { display: none; }\n";
+	// MAIN
+		if (response.o.full)
+			css += "abbr.timestamp:not(.full) { display:none; }\n";
+		if (response.o.idle)
+			css += "#fbChatBuddyListParent a.idle, #chatFriendsOnline li.chatIdle { display: none; }\n";
+		if (response.o.bottom) {
+			css += "#fbDockChatBuddylistNub { display: none; }\n";
+			css += ".fbDockWrapperRight .rNubContainer { background: none !important; border-color: transparent !important; }\n";
 		}
-		if (response.o.n_manage || response.o.n_shareS)
-			css += ".lhn-section-footer, .lhn-section-footer * { visibility: hidden !important; height: 0px !important; }\n";
-		if (response.o.n_home)
-			css += "#lhn-selectors { display: none; }\n";
-		if (response.o.n_all)
-			css += "#reading-list-selector { display: none; }\n";
-		if (response.o.n_star)
-			css += "#star-selector { display: none; }\n";
-		if (response.o.n_your)
-			css += "#your-items-tree-item-0-main { display: none; }\n";
-		if (response.o.n_share)
-			css += "#your-items-tree-item-1-link { display: none; }\n";
-		if (response.o.n_notes)
-			css += "#your-items-tree-item-2-link { display: none; }\n";
-		if (response.o.n_trends)
-			css += "#trends-selector { display: none; }\n";
-		if (response.o.n_browse)
-			css += "#directory-selector { display: none; }\n";
-		if (response.o.n_follow)
-			css += "#friends-tree-container { display: none; }\n";
-		if (response.o.n_new)
-			css += "#lhn-friends-indicator { display: none; }\n";
-		if (response.o.n_explore)
-			css += "#recommendations-tree-container { display: none; }\n";
+		if (response.o.f_share)
+			css += "#pagelet_home_stream .UIActionLinks.UIActionLinks_bottom a { display: none; }\n";
+		if (response.o.f_tr)
+			css += "#pagelet_stream_header .uiHeaderActions { display: none; }\n";
+		if (response.o.f_app)
+			css += "#pagelet_home_stream [data-ft *= 'sty\":237'] { display: none; }\n";
+		if (response.o.f_event)
+			css += "#pagelet_home_stream [data-ft *= 'sty\":1'], #pagelet_home_stream [data-ft *= 'sty\":38'], #pagelet_home_stream [data-ft *= 'sty\":178'] { display: none; }\n";
+		if (response.o.f_friend)
+			css += "#pagelet_home_stream [data-ft *= 'sty\":8'], #pagelet_home_stream [data-ft *= 'sty\":12'] { display: none; }\n";
+		if (response.o.f_group)
+			css += "#pagelet_home_stream [data-ft *= 'sty\":4'], #pagelet_home_stream [data-ft *= 'sty\":21'] { display: none; }\n";
+		if (response.o.f_like)
+			css += "#pagelet_home_stream [data-ft *= 'sty\":161'], #pagelet_home_stream [data-ft *= 'sty\":238'] { display: none; }\n";
+		if (response.o.f_link)
+			css += "#pagelet_home_stream [data-ft *= 'sty\":5'], #pagelet_home_stream [data-ft *= 'sty\":263'] { display: none; }\n";
+		if (response.o.f_note)
+			css += "#pagelet_home_stream [data-ft *= 'sty\":66'] { display: none; }\n";
+		if (response.o.f_photo)
+			css += "#pagelet_home_stream [data-ft *= 'sty\":6'], #pagelet_home_stream [data-ft *= 'sty\":7'], #pagelet_home_stream [data-ft *= 'sty\":65'], #pagelet_home_stream [data-ft *= 'sty\":247'] { display: none; }\n";
+		if (response.o.f_place)
+			css += "#pagelet_home_stream [data-ft *= 'sty\":285'] { display: none; }\n";
+		if (response.o.f_profile)
+			css += "#pagelet_home_stream [data-ft *= 'sty\":60'], #pagelet_home_stream [data-ft *= 'sty\":259'] { display: none; }\n";
+		if (response.o.f_relationship)
+			css += "#pagelet_home_stream [data-ft *= 'sty\":10'] { display: none; }\n";
+		if (response.o.f_status)
+			css += "#pagelet_home_stream [data-ft *= 'sty\":11'], #pagelet_home_stream [data-ft *= 'sty\":46'] { display: none; }\n";
+		if (response.o.f_video)
+			css += "#pagelet_home_stream [data-ft *= 'sty\":3'], #pagelet_home_stream [data-ft *= 'sty\":128'], #pagelet_home_stream [data-ft *= 'sty\":130'] { display: none; }\n";
+		if (response.o.f_wall)
+			css += "#pagelet_home_stream [data-ft *= 'sty\":56'], #pagelet_home_stream [data-ft *= 'sty\":273'] { display: none; }\n";		
 	// CUSTOM
 		if (response.o.customCSS)
 			css += response.o.customCSSval;
@@ -211,16 +184,16 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 	function HexToG(h) { return parseInt((cutHex(h)).substring(2,4),16) }
 	function HexToB(h) { return parseInt((cutHex(h)).substring(4,6),16) }
 	function cutHex(h) { return (h.charAt(0) == "#") ? h.substring(1,7) : h }
-	function lighten(one) {
+	function lighten(one, by, o) {
 		if (one.indexOf('rgb') == -1) {
-			var r = HexToR(one) + 30;
-			var g = HexToG(one) + 30;
-			var b = HexToB(one) + 30;
+			var r = HexToR(one) + by;
+			var g = HexToG(one) + by;
+			var b = HexToB(one) + by;
 		} else {
 			var rgb = one.split(",");
-			var r = parseInt(rgb[0].substring(4)) + 20;
-			var g = parseInt(rgb[1]) + 20;
-			var b = parseInt(rgb[2].substring(0,rgb[2].indexOf("\)"))) + 20;
+			var r = parseInt(rgb[0].substring(4)) + by;
+			var g = parseInt(rgb[1]) + by;
+			var b = parseInt(rgb[2].substring(0,rgb[2].indexOf("\)"))) + by;
 		}
 		if (r > 255)
 			r = 255;
@@ -228,7 +201,7 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 			g = 255;
 		if (b > 255)
 			b = 255;
-		return "rgb(" + r + "," + g + "," + b + ")";
+		return "rgba(" + r + "," + g + "," + b + "," + o + ")";
 	}
 	//---- HELPER METHODS ----//
 });

@@ -277,7 +277,7 @@ body {
 				#preview img {
 					border: 1px solid #000;
 				}
-			#linkCLR, #backCLR, #borderCLR, #todayCLR,#Hcolor, #BTNcolor, #BTNborder, #BTNbottom, #BTNtop  {
+			#accentCLR, #backCLR {
 				position: relative;
 				display: inline-block;
 				width: 50px;
@@ -287,20 +287,7 @@ body {
 				border: 1px solid #000;
 				cursor: pointer;
 			}
-			#linkCLR div, #backCLR div, #borderCLR div, #todayCLR div, #Hcolor div, #BTNcolor div, #BTNborder div, #BTNbottom div, #BTNtop div {
+			#accentCLR div, #backCLR div {
 				width: 50px;
 				height: 15px;
-			}
-			.J-Zh-I {
-				margin: 5px 0 5px 5px;
-				padding: 3px 8px;
-				width: 82px;
-				text-align: center;
-				vertical-align: middle;
-				font: 75% arial,sans-serif;
-				font-size: 12px;
-				color: #000;
-				border: 1px solid #BBB;
-				-webkit-border-radius: 3px;
-				background: -webkit-gradient(linear,0% 40%,0% 70%,from(#F9F9F9),to(#E3E3E3));
 			}
