@@ -67,7 +67,7 @@ $(function(){
 			$("#idle").attr('checked', o.idle);
 			$("#bottom").attr('checked', o.bottom);
 			$("#f_lf").attr('checked', o.f_lf);
-			$("#f_share").attr('checked', o.f_share);
+			//$("#f_share").attr('checked', o.f_share);
 			$("#f_tr").attr('checked', o.f_tr);
 			$("#f_app").attr('checked', o.f_app);
 			$("#f_event").attr('checked', o.f_event);
@@ -143,7 +143,7 @@ $(function(){
 				"idle":$("#idle").attr('checked'),
 				"bottom":$("#bottom").attr('checked'),
 				"f_lf":$("#f_lf").attr('checked'),
-				"f_share":$("#f_share").attr('checked'),
+				//"f_share":$("#f_share").attr('checked'),
 				"f_tr":$("#f_tr").attr('checked'),
 				"f_app":$("#f_app").attr('checked'),
 				"f_event":$("#f_event").attr('checked'),
@@ -272,15 +272,9 @@ function cButtonReset() {
 function export(EIid) {
 	var prefOut = new Array();
 		prefOut[0] = localStorage["options"];
-		prefOut[1] = localStorage["borderCLR"];
-		prefOut[2] = localStorage["itemCLR"];
-		prefOut[3] = localStorage["BTNcolor"];
-		prefOut[4] = localStorage["BTNborder"];
-		prefOut[5] = localStorage["BTNbottom"];
-		prefOut[6] = localStorage["BTNtop"];
-		prefOut[7] = localStorage["customCSSval"];
-		prefOut[8] = localStorage["backCLR"];
-		prefOut[9] = localStorage["linkCLR"];
+		prefOut[1] = localStorage["backCLR"];
+		prefOut[2] = localStorage["accentCLR"];
+		prefOut[3] = localStorage["customCSSval"];
 	var prefsOut = prefOut[0];	// fencepost
 	for (var i = 1; i <= 9; i++) {
 		prefsOut += '\n' + prefOut[i];
@@ -294,14 +288,8 @@ function import(EIid) {
 	var prefIn = prefsIn.split("\n");
 		localStorage["options"] = prefIn[0];
 		localStorage["borderCLR"] = prefIn[1];
-		localStorage["itemCLR"] = prefIn[2];
-		localStorage["BTNcolor"] = prefIn[3];
-		localStorage["BTNborder"] = prefIn[4];
-		localStorage["BTNbottom"] = prefIn[5];
-		localStorage["BTNtop"] = prefIn[6];
-		localStorage["customCSSval"] = prefIn[7];
-		localStorage["backCLR"] = prefIn[8];
-		localStorage["linkCLR"] = prefIn[9];
+		localStorage["accentCLR"] = prefIn[2];
+		localStorage["customCSSval"] = prefIn[3];
 	window.location.hash = "imps";
 	window.location.reload();
 }

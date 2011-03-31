@@ -23,18 +23,18 @@
   * This permissions results in the "This extensions can access your browsing history" warning.
   * I *NEVER* access your browsing history.
   * I need this permission to open tabs. I use this to open the options page on major updates.
-  * This permission is also used to refresh the Google Calendar tab when you save your settings.
+  * This permission is also used to refresh the Facebook tab when you save your settings.
  == "bookmarks"
   * This permission results in the "This item can access your bookmars" warning.
   * I *NEVER* access, read, modify, store, or transmit any of bookmarks.
   * I need this permission to create a bookmark that is used to sync settings accross computers.
- == "http://*google.com/reader/*", "https://*google.com/reader/*"
-  * This permission results in the "This extension can access your data on google.com/calendar" warning.
+ == "http://www.facebook.com/*", "https://www.facebook.com/*"
+  * This permission results in the "This extension can access your data on www.facebook.com" warning.
   * I *NEVER* access, read, store, or transmit your personal data.
   * I need this permission to run user scripts behind specific pages in the browser.
-  * These scripts inject Javascript and CSS into Gmail to enhance functionality and hide elements
+  * These scripts inject Javascript and CSS into Facebook to enhance functionality and hide elements
 
-  Still don't trust me? Go to [https://github.com/anstosa/Minimalist-Google-Reader] to see the entire source code.
+  Still don't trust me? Go to [https://github.com/anstosa/Minimalist-Facebook] to see the entire source code.
 
 
 == OPTIONS ==
@@ -89,13 +89,12 @@
   * Hide Recommended
   * Hide People You May Know
   * Hide Ads
- == NEWS FEED
+ == MAIN
   * Show true timestamps
   * Photo zoom on hover
   * Disable theater mode
   * Hide idle
   * Hide bottom list
-  * Hide Share links
   * Hide Top/Recent
   * Hide Applications stories
   * Hide event stories

@@ -167,15 +167,15 @@
 		<section>
 			<h3>Minimalist</h3>
 			<div>
-				<input type="checkbox" id="min" />
-					&nbsp;<label for="min" title="">Enable Minimalist stylesheet</label><br />
+				<input type="checkbox" disabled id="min" />
+					&nbsp;<label for="min" hide title="">Enable Minimalist stylesheet</label> [coming soon]<br />
 			</div>
 		</section>
 		<section>
 			<h3>Layout</h3>
 			<div>
 				<input type="checkbox" id="fullW" />
-					&nbsp;<label for="fullW" title="">Force full-width layout</label><br />
+					&nbsp;<label for="fullW" hide title="">Force full-width layout</label><br />
 			</div>
 		</section>
 		<section>
@@ -318,19 +318,19 @@
 			<h3>Other</h3>
 			<div>
 				<input type="checkbox" id="s_events" />
-					&nbsp;<label for="s_events" title="">Hide events</label><br />
+					&nbsp;<label for="s_events" hide title="">Hide events</label><br />
 				<input type="checkbox" id="s_find" />
-					&nbsp;<label for="s_find" title="">Hide Find More Friends</label><br />
+					&nbsp;<label for="s_find" hide title="">Hide Find More Friends</label><br />
 				<input type="checkbox" id="s_requests" />
-					&nbsp;<label for="s_requests" title="">Hide Requests</label><br />
+					&nbsp;<label for="s_requests" hide title="">Hide Requests</label><br />
 				<input type="checkbox" id="s_pokes" />
-					&nbsp;<label for="s_pokes" title="">Hide Pokes</label><br />
+					&nbsp;<label for="s_pokes" hide title="">Hide Pokes</label><br />
 				<input type="checkbox" id="s_recommended" />
-					&nbsp;<label for="s_recommended" title="">Hide Recommended</label><br />
+					&nbsp;<label for="s_recommended" hide title="">Hide Recommended</label><br />
 				<input type="checkbox" id="s_people" />
-					&nbsp;<label for="s_people" title="">Hide People You May Know</label><br />
+					&nbsp;<label for="s_people" hide title="">Hide People You May Know</label><br />
 				<input type="checkbox" id="s_ads" />
-					&nbsp;<label for="s_ads" title="">Hide Ads</label><br />
+					&nbsp;<label for="s_ads" hide title="">Hide Ads</label><br />
 			</div>
 		</section>
 	</div>
@@ -366,38 +366,38 @@
 			<div>
 				<input type="checkbox" id="f_lf" />
 					&nbsp;<label for="f_lf" title="">Default to "Most Recent" feed</label><br />
-				<input type="checkbox" id="f_share" />
-					&nbsp;<label for="f_share" title="">Hide share links</label><br />
+				<!-- <input type="checkbox" id="f_share" />
+					&nbsp;<label for="f_share" title="">Hide share links</label><br /> -->
 				<input type="checkbox" id="f_tr" />
 					&nbsp;<label for="f_tr" title="">Hide Top/Recent</label><br />
 				<input type="checkbox" id="f_app" />
-					&nbsp;<label for="f_app" title="">Hide Applications stories</label><br />
+					&nbsp;<label hide for="f_app" title="">Hide Applications stories</label><br />
 				<input type="checkbox" id="f_event" />
-					&nbsp;<label for="f_event" title="">Hide event stories</label><br />
+					&nbsp;<label hide for="f_event" title="">Hide event stories</label><br />
 				<input type="checkbox" id="f_friend" />
-					&nbsp;<label for="f_friend" title="">Hide friend stories</label><br />
+					&nbsp;<label hide for="f_friend" title="">Hide friend stories</label><br />
 				<input type="checkbox" id="f_group" />
-					&nbsp;<label for="f_group" title="">Hide group stories</label><br />
+					&nbsp;<label hide for="f_group" title="">Hide group stories</label><br />
 				<input type="checkbox" id="f_like" />
-					&nbsp;<label for="f_like" title="">Hide like stories</label><br />
+					&nbsp;<label hide for="f_like" title="">Hide like stories</label><br />
 				<input type="checkbox" id="f_link" />
-					&nbsp;<label for="f_link" title="">Hide link stories</label><br />
+					&nbsp;<label hide for="f_link" title="">Hide link stories</label><br />
 				<input type="checkbox" id="f_note" />
-					&nbsp;<label for="f_note" title="">Hide note stories</label><br />
+					&nbsp;<label hide for="f_note" title="">Hide note stories</label><br />
 				<input type="checkbox" id="f_photo" />
-					&nbsp;<label for="f_photo" title="">Hide photo stories</label><br />
+					&nbsp;<label hide for="f_photo" title="">Hide photo stories</label><br />
 				<input type="checkbox" id="f_place" />
-					&nbsp;<label for="f_place" title="">Hide place stories</label><br />
+					&nbsp;<label hide for="f_place" title="">Hide place stories</label><br />
 				<input type="checkbox" id="f_profile" />
-					&nbsp;<label for="f_profile" title="">Hide profile picture stories</label><br />
+					&nbsp;<label hide for="f_profile" title="">Hide profile picture stories</label><br />
 				<input type="checkbox" id="f_relationship" />
-					&nbsp;<label for="f_relationship" title="">Hide relationship status stories</label><br />
+					&nbsp;<label hide for="f_relationship" title="">Hide relationship status stories</label><br />
 				<input type="checkbox" id="f_status" />
-					&nbsp;<label for="f_status" title="">Hide status stories</label><br />
+					&nbsp;<label hide for="f_status" title="">Hide status stories</label><br />
 				<input type="checkbox" id="f_video" />
-					&nbsp;<label for="f_video" title="">Hide video stories</label><br />
+					&nbsp;<label hide for="f_video" title="">Hide video stories</label><br />
 				<input type="checkbox" id="f_wall" />
-					&nbsp;<label for="f_wall" title="">Hide wall post stories</label><br />
+					&nbsp;<label hide for="f_wall" title="">Hide wall post stories</label><br />
 			</div>
 		</section>
 	</div>
@@ -419,10 +419,46 @@
 			<div>
 				<strong>Warning:</strong> clicking a preset will replace your current settings. Your current settings will be saved to "Custom 3", overriding it's contents.<br /><br />
 				<div style="display: none;">
-					<textarea id="EI_0" rows="5" cols="40"></textarea>
-					<textarea id="EI_1" rows="5" cols="40"></textarea>
-					<textarea id="EI_2" rows="5" cols="40"></textarea>
-					<textarea id="EI_3" rows="5" cols="40"></textarea>
+					<textarea id="EI_0" rows="5" cols="40">{"mficon":false,"favicon":false,"trans":false,"footer":false,"customCSS":false,"customCSSval":"","min":false,"fullW":false,"backC":false,"backCLR":"#ffffff","accent":false,"accentCLR":"#3B5998","high":false,"tbarH":false,"t_float":false,"logo":false,"t_friends":false,"t_messages":false,"t_notifications":false,"t_search":false,"t_home":false,"t_profile":false,"navH":false,"navF":false,"n_profile":false,"n_news":false,"n_messages":false,"n_events":false,"n_friends":false,"n_groups":false,"n_more":false,"n_chat":false,"n_search":false,"s_all":false,"s_events":false,"s_find":false,"s_requests":false,"s_pokes":false,"s_recommended":false,"s_people":false,"s_ads":false,"full":false,"zoom":false,"theater":false,"idle":false,"bottom":false,"f_lf":false,"f_tr":false,"f_app":false,"f_event":false,"f_friend":false,"f_group":false,"f_like":false,"f_link":false,"f_note":false,"f_photo":false,"f_place":false,"f_profile":false,"f_relationship":false,"f_status":false,"f_video":false,"f_wall":false}
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+
+#ffffff
+undefined</textarea>
+					<textarea id="EI_1" rows="5" cols="40">{"mficon":false,"favicon":true,"trans":false,"footer":true,"customCSS":false,"customCSSval":"","min":false,"fullW":false,"backC":false,"backCLR":"#ffffff","accent":false,"accentCLR":"#3B5998","high":false,"tbarH":false,"t_float":false,"logo":false,"t_friends":false,"t_messages":false,"t_notifications":false,"t_search":false,"t_home":false,"t_profile":true,"navH":false,"navF":false,"n_profile":false,"n_news":false,"n_messages":false,"n_events":false,"n_friends":false,"n_groups":false,"n_more":false,"n_chat":false,"n_search":true,"s_all":false,"s_events":false,"s_find":false,"s_requests":false,"s_pokes":false,"s_recommended":false,"s_people":false,"s_ads":true,"full":false,"zoom":true,"theater":false,"idle":false,"bottom":false,"f_lf":false,"f_tr":false,"f_app":false,"f_event":false,"f_friend":false,"f_group":false,"f_like":false,"f_link":false,"f_note":false,"f_photo":false,"f_place":false,"f_profile":false,"f_relationship":false,"f_status":false,"f_video":false,"f_wall":false}
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+
+#ffffff
+undefined</textarea>
+					<textarea id="EI_2" rows="5" cols="40">{"mficon":false,"favicon":true,"trans":false,"footer":true,"customCSS":false,"customCSSval":"","min":false,"fullW":false,"backC":false,"backCLR":"#ffffff","accent":false,"accentCLR":"#3B5998","high":true,"tbarH":false,"t_float":true,"logo":false,"t_friends":false,"t_messages":false,"t_notifications":false,"t_search":false,"t_home":false,"t_profile":true,"navH":false,"navF":true,"n_profile":false,"n_news":false,"n_messages":false,"n_events":false,"n_friends":false,"n_groups":false,"n_more":false,"n_chat":false,"n_search":true,"s_all":false,"s_events":false,"s_find":true,"s_requests":false,"s_pokes":false,"s_recommended":true,"s_people":true,"s_ads":true,"full":false,"zoom":true,"theater":false,"idle":false,"bottom":false,"f_lf":false,"f_tr":false,"f_app":false,"f_event":false,"f_friend":false,"f_group":false,"f_like":false,"f_link":false,"f_note":false,"f_photo":false,"f_place":false,"f_profile":false,"f_relationship":false,"f_status":false,"f_video":false,"f_wall":false}
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+
+#ffffff
+undefined</textarea>
+					<textarea id="EI_3" rows="5" cols="40">{"mficon":false,"favicon":true,"trans":true,"footer":true,"customCSS":false,"customCSSval":"","min":false,"fullW":false,"backC":false,"backCLR":"#ffffff","accent":false,"accentCLR":"#3B5998","high":true,"tbarH":false,"t_float":true,"logo":false,"t_friends":false,"t_messages":false,"t_notifications":false,"t_search":false,"t_home":true,"t_profile":true,"navH":false,"navF":true,"n_profile":false,"n_news":false,"n_messages":false,"n_events":false,"n_friends":false,"n_groups":false,"n_more":true,"n_chat":false,"n_search":true,"s_all":true,"s_events":false,"s_find":false,"s_requests":false,"s_pokes":false,"s_recommended":false,"s_people":false,"s_ads":false,"full":true,"zoom":true,"theater":true,"idle":true,"bottom":true,"f_lf":false,"f_tr":true,"f_app":false,"f_event":false,"f_friend":false,"f_group":false,"f_like":false,"f_link":false,"f_note":false,"f_photo":false,"f_place":false,"f_profile":false,"f_relationship":false,"f_status":false,"f_video":false,"f_wall":false}
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+
+#ffffff
+undefined</textarea>
 				</div>
 				<input type="button" value="None" onClick="javascript:export('EIC_3');import('EI_0');;" />
 				<input type="button" value="Basics" onClick="javascript:export('EIC_3');import('EI_1');;" />

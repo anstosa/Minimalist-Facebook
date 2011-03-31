@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name             Minimalist for Google Reader
+// @name             Minimalist for Facebook
 // @author           Ansel Santosa
 // @namespace        http://chrome.google.com/webstore
 // @description      Features that require one time initialization on complete page load.
@@ -41,7 +41,7 @@ chrome.extension.sendRequest({elements: "o"}, function(response) {
 		else {
 			running = true;
 		}
-		// go loop go!
+		// go loop go!		
 		if (response.o.min && document.getElementById("pageLogo").firstChild.innerHTML != "facebook")
 			document.getElementById("pageLogo").firstChild.innerHTML = "facebook";
 		if (response.o.theater) {
@@ -74,6 +74,7 @@ chrome.extension.sendRequest({elements: "o"}, function(response) {
 					full.setAttribute("class","full")
 					full.innerHTML = timestamps[i].getAttribute("title");
 				timestamps[i].parentNode.insertBefore(full, timestamps[i]);
+				timestamps[i].parentNode.removeChild(timestamps[i]);
 			}
 		}
 		if (response.o.tbarH && !document.getElementById('tbarToggle')) {

@@ -19,7 +19,7 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 				+ "#pageLogo a { background-image: none !important; font-family: 'Raleway', sand-serif; }"
 	// GENERAL
 		if (response.o.trans)
-			css += "* { -webkit-transition-property: background-color, border-color, color, opacity, width, top; -webkit-transition-duration: .15s; -webkit-transition-timing-function: ease-out; }\n";
+			css += "*:not(#zoom):not(#zoom *) { -webkit-transition-property: background-color, border-color, color, opacity, width, top; -webkit-transition-duration: .15s; -webkit-transition-timing-function: ease-out; }\n";
 		if (response.o.footer)
 			css += "#footerContainer { display: none; }\n";
 	// THEME
@@ -35,7 +35,7 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 		if (response.o.accent) {
 			css += ".uiComposerWhiteMessageBox .uiComposerMessageBox { background: none; }\n";
 			css += "#blueBar { background: " + response.o.accentCLR + " !important; background-color: " + response.o.accentCLR + " !important; }\n";
-			css += "#pageLogo > a, .jewel > a { background-image: url( " + toolbar + " ) !important; background-color: transparent; }\n";
+			css += "#pageLogo > a, .jewel > a { background-image: url( " + toolbar + " ) !important; background-color: transparent !important; }\n";
 			css += "#pageNav a:hover, #pageLogo > a:hover, .jewel:not(.openToggler) > a:hover { background-color: rgba(255,255,255,.15) !important; }\n";
 			css += ".hasLeftCol #contentCol, .hasLeftCol #contentCurve, .hasLeftCol #mainContainer, #navSearch .uiTypeahead, #navSearch .uiTypeahead .wrap, #headNav, .fbNubFlyoutTitlebar { border-color: rgba(0,0,0,.5) !important;}\n";
 			css += "#headNav, .fbNubFlyoutTitlebar { background: " + lighten(response.o.accentCLR, 35, 1) + " !important; background-color: " + lighten(response.o.accentCLR, 35, 1) + " !important; }\n";
@@ -60,7 +60,7 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 			css += "#pageHead { padding-top: 0; }\n";
 		}
 		if (response.o.t_float || response.o.min) {
-			css += "#blueBar { position: fixed; box-shadow: 0 0 15px rgba(0,0,0,.25),  0 0 10px rgba(0,0,0,.25); z-index: 9998; }\n";
+			css += "#blueBar { position: fixed !important; box-shadow: 0 0 15px rgba(0,0,0,.25),  0 0 10px rgba(0,0,0,.25); z-index: 9998 !important; }\n";
 			css += "#globalContainer > div:first-child { position: fixed; z-index: 9999; width: inherit;}\n";
 			css += "#content { padding-top: 41px; }\n";
 		}
@@ -132,6 +132,11 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 		if (response.o.bottom) {
 			css += "#fbDockChatBuddylistNub { display: none; }\n";
 			css += ".fbDockWrapperRight .rNubContainer { background: none !important; border-color: transparent !important; }\n";
+		}
+		if (response.o.zoom) {
+			css += "#zoom { position: absolute; min-height:50px; min-width:50px; background:#FFF url(data:image/gif;base64,R0lGODlhEAALALMMAOXp8a2503CHtOrt9L3G2+Dl7vL0+J6sy4yew1Jvp/T2+e/y9v///wAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFCwAMACwAAAAAEAALAAAEK5DJSau91KxlpObepinKIi2kyaAlq7pnCq9p3NZ0aW/47H4dBjAEwhiPlAgAIfkECQsADAAsAAAAAAQACwAABA9QpCQRmhbflPnu4HdJVAQAIfkECQsADAAsAAAAABAACwAABDKQySlSEnOGc4JMCJJk0kEQxxeOpImqIsm4KQPG7VnfbEbDvcnPtpINebJNByiTVS6yCAAh+QQJCwAMACwAAAAAEAALAAAEPpDJSaVISVQWzglSgiAJUBSAdBDEEY5JMQyFyrqMSMq03b67WY2x+uVgvGERp4sJfUyYCQUFJjadj3WzuWQiACH5BAkLAAwALAAAAAAQAAsAAAQ9kMlJq73hnGDWMhJQFIB0EMSxKMoiFcNQmKjKugws0+navrEZ49S7AXfDmg+nExIPnU9oVEqmLpXMBouNAAAh+QQFCwAMACwAAAAAEAALAAAEM5DJSau91KxlpOYSUBTAoiiLZKJSMQzFmjJy+8bnXDMuvO89HIuWs8E+HQYyNAJgntBKBAAh+QQFFAAMACwMAAIABAAHAAAEDNCsJZWaFt+V+ZVUBAA7) no-repeat center center; box-shadow: 0 0 10px rgba(0,0,0,.35), 0 0 20px rgba(0,0,0,.35), 0 0 35px rgba(0,0,0,.35), 0 0 55px rgba(0,0,0,.35); z-index: 99999; padding: 10px; }\n";
+			css += "#zoom div { display: block; position: absolute; top: 10px; left: 0; width: 100%; background-color: rgba(255,255,255,.75); font-weight: bold; }\n";
+			css += "#zoom div span { display: block; margin: 10px 20px; }\n";
 		}
 		if (response.o.f_share)
 			css += "#pagelet_home_stream .UIActionLinks.UIActionLinks_bottom a { display: none; }\n";
