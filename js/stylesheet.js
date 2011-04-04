@@ -9,6 +9,7 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 	var css = "";
 	var toolbar = chrome.extension.getURL("img/Pvubnmvx_0f.png");
 	var background = chrome.extension.getURL("img/bg.png");
+
 	// MINIMALIST
 		if (response.o.min)
 			css += "body { background: url(\"" + background + "\") repeat-x #222 !important; }"
@@ -24,8 +25,15 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 			css += "#footerContainer { display: none; }\n";
 	// THEME
 		if (response.o.fullW) {
-			css += ".fbx #globalContainer { width:auto; margin:auto 7px; }\n";
-			css += ".fbx #fbf-page-head-container { width:auto; }\n";
+			css += ".fbx #globalContainer { width: auto !important; margin: auto 7px !important; }\n";
+			css += ".fbx .commentable_item .uiUfi, .fbx #fbf-page-head-container { width: auto !important; }\n";
+			css += "#rightCol { position: absolute; top: 41px; right: 10px;}\n";
+			css += "#contentArea { width: auto !important; padding-right: 290px !important; }\n";
+			css += ".uiUfiAddComment textarea, .uiUfiAddComment .commentBtn { float: none; margin-right: 10px; }\n";
+			if (response.o.t_float || response.o.min)
+				css += ".fbx #pageHead { width:" + (window.innerWidth - 31) + "px !important; }\n";
+			if (response.o.sF)
+				css += "#rightCol { position: fixed;}\n";
 		}
 		if (response.o.backC) {
 			css += "body, .hasLeftCol #pageFooter, #contentCurve, #chatFriendsOnline > div:nth-child(2), #contentCol { background: " + response.o.backCLR + " !important;  background-color: " + response.o.backCLR + " !important; }\n";
@@ -82,7 +90,12 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 		if (response.o.navH) {
 			css += "#navToggle { float: left; z-index: 999; background-color: rgba(0,0,0,0); width: 10px !important; height: 600px !important; cursor: pointer !important; }\n";
 			css += "#navToggle:hover { background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,.15)), to(rgba(0,0,0,0))); }\n";
-			css += "#leftCol { width: 169px; margin-left: 10px; }\n";
+			if (response.o.navF || response.o.min)
+				css += "#leftCol { width: 169px !important; margin-left: 10px; }\n";
+			else  css += "#leftCol { width: 169px !important; }\n";
+			css += ".fbxWelcomeBoxName { width: 102px !important; }\n";
+			css += "[min ~= 'hideN'] .uiUfiAddComment textarea, [min ~= 'hideN']  .uiUfiAddComment .commentBtn { float: none; margin-right: 10px; }\n";
+			css += "[min ~= 'hideN'] .uiUfi, [min ~= 'hideN'] .fbx #fbf-page-head-container { width: auto !important; }\n";
 		}
 		if (response.o.navF || response.o.min)
 			css += "#leftCol { position: fixed; top: 41px; }\n";
@@ -110,6 +123,8 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 			css += "#contentArea, .uiUfi { width: 100% !important; }\n";
 			css += "#contentCol { padding-right: 40px }\n";
 		}
+		if ((response.o.sF || response.o.min) && !response.o.fullW)
+			css += "#rightCol { position: fixed; top: 41px; margin-left: 535px; }\n";
 		if (response.o.s_events)
 			css += "#pagelet_eventbox { display: none; }\n";
 		if (response.o.s_find)

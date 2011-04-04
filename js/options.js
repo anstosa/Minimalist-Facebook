@@ -53,6 +53,7 @@ $(function(){
 			$("#n_search").attr('checked', o.n_search);
 		// SIDEBAR
 			$("#s_all").attr('checked', o.s_all);
+			$("#sF").attr('checked', o.sF);
 			$("#s_events").attr('checked', o.s_events);
 			$("#s_find").attr('checked', o.s_find);
 			$("#s_requests").attr('checked', o.s_requests);
@@ -84,6 +85,9 @@ $(function(){
 			$("#f_video").attr('checked', o.f_video);
 			$("#f_wall").attr('checked', o.f_wall);
 		localStorage["uncheckedUpdate"] = false;
+		$("#EIC_1").val(localStorage["EIC_1"]);
+		$("#EIC_2").val(localStorage["EIC_2"]);
+		$("#EIC_3").val(localStorage["EIC_3"]);
 	}
 	//---- END LOAD ----//
 	
@@ -129,6 +133,7 @@ $(function(){
 				"n_search":$("#n_search").attr('checked'),
 			// SIDEBAR
 				"s_all":$("#s_all").attr('checked'),
+				"sF":$("#sF").attr('checked'),
 				"s_events":$("#s_events").attr('checked'),
 				"s_find":$("#s_find").attr('checked'),
 				"s_requests":$("#s_requests").attr('checked'),
@@ -276,7 +281,7 @@ function export(EIid) {
 		prefOut[2] = localStorage["accentCLR"];
 		prefOut[3] = localStorage["customCSSval"];
 	var prefsOut = prefOut[0];	// fencepost
-	for (var i = 1; i <= 9; i++) {
+	for (var i = 1; i <= 3; i++) {
 		prefsOut += '\n' + prefOut[i];
 	}
 	document.getElementById(EIid).innerHTML = prefsOut;

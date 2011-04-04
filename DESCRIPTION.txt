@@ -82,6 +82,7 @@
   * Hide Chat search box
  == SIDEBAR
   * Hide sidebar [click to toggle when hidden]
+  * Floating sidebar
   * Hide Events
   * Hide Find More Friends
   * Hide Requests
@@ -141,7 +142,21 @@
 
 == CHANGELOG ==
 
- == 0.5.0 [XX MAR]
+ 
+ == 0.5.4 [4 APR]
+  * Fixed: Layout errors with Hide nav without floating nav
+  * Fixed: Custom settings fields not loading from memory
+  * Fixed: Export loop executes too many times
+ == 0.5.3 [3 APR]
+  * Fixed: Toolbar too short in full-width layout
+ == 0.5.2 [31 MAR]
+  * Fixed: Error in manifest
+ == 0.5.1 [31 MAR]
+  * Added: Floating Sidebar
+  * Fixed: Options not being applied to apps.facebook.com
+  * Fixed: Full width options only aligned left
+  * Fixed: Hide navigation breaking stuff
+ == 0.5.0 [30 MAR]
   * First!
 
 

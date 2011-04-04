@@ -156,20 +156,22 @@ chrome.extension.sendRequest({elements: "o"}, function(response) {
 
 	function toggleNav() {
 		if (hiddenN) {
-			//minimalist(document.getElementsByTagName('body')[0], true, "hideN");
+			minimalist(document.getElementsByTagName('body')[0], true, "hideN");
 			document.getElementById("leftCol").setAttribute("style","");
 			document.getElementById("headNav").setAttribute("style","");
 			document.getElementById("contentCol").setAttribute("style","");
 			document.getElementById("pageLogo").setAttribute("style","");
 			document.getElementById("pageLogo").nextSibling.setAttribute("style","");
+			document.getElementById("contentArea").setAttribute("style","");
 			hiddenN = false;
 		} else {
-			//minimalist(document.getElementsByTagName('body')[0], false, "hideN");
+			minimalist(document.getElementsByTagName('body')[0], false, "hideN");
 			document.getElementById("leftCol").setAttribute("style","display: none;");
 			document.getElementById("headNav").setAttribute("style","margin-left: 9px;");
 			document.getElementById("contentCol").setAttribute("style","margin-left: 10px;");
 			document.getElementById("pageLogo").setAttribute("style","display: none;");
 			document.getElementById("pageLogo").nextSibling.setAttribute("style","display: none;");
+			document.getElementById("contentArea").setAttribute("style","width: 664px;");
 			hiddenN = true;
 		}
 	}
