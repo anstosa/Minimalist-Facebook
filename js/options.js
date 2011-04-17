@@ -39,6 +39,7 @@ $(function(){
 			$("#t_search").attr('checked', o.t_search);
 			$("#t_home").attr('checked', o.t_home);
 			$("#t_profile").attr('checked', o.t_profile);
+			$("#t_ff").attr('checked', o.t_ff);
 		// NAVIGATION
 			$("#navH").attr('checked', o.navH);
 			$("#navF").attr('checked', o.navF);
@@ -71,6 +72,8 @@ $(function(){
 			//$("#f_share").attr('checked', o.f_share);
 			$("#f_tr").attr('checked', o.f_tr);
 			$("#f_app").attr('checked', o.f_app);
+			$("#f_poll").attr('checked', o.f_poll);
+			$("#f_page").attr('checked', o.f_page);
 			$("#f_event").attr('checked', o.f_event);
 			$("#f_friend").attr('checked', o.f_friend);
 			$("#f_group").attr('checked', o.f_group);
@@ -119,6 +122,7 @@ $(function(){
 				"t_search":$("#t_search").attr('checked'),
 				"t_home":$("#t_home").attr('checked'),
 				"t_profile":$("#t_profile").attr('checked'),				
+				"t_ff":$("#t_ff").attr('checked'),	
 			// NAVIGATION
 				"navH":$("#navH").attr('checked'),
 				"navF":$("#navF").attr('checked'),
@@ -151,6 +155,8 @@ $(function(){
 				//"f_share":$("#f_share").attr('checked'),
 				"f_tr":$("#f_tr").attr('checked'),
 				"f_app":$("#f_app").attr('checked'),
+				"f_poll":$("#f_poll").attr('checked'),
+				"f_page":$("#f_page").attr('checked'),
 				"f_event":$("#f_event").attr('checked'),
 				"f_friend":$("#f_friend").attr('checked'),
 				"f_group":$("#f_group").attr('checked'),

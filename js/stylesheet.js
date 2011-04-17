@@ -83,9 +83,11 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 		if (response.o.t_search)
 			css += "#navSearch { display: none; }\n";
 		if (response.o.t_home)
-			css += "#pageNav > li:nth-child(2) { display: none; }\n";
+			css += "#navHome { display: none; }\n";
 		if (response.o.t_profile)
-			css += "#pageNav > li:nth-child(3) { display: none; }\n";
+			css += "#navHome + li { display: none; }\n";
+			if (response.o.t_ff)
+			css += "#navHome + li + li { display: none; }\n";
 	// NAVIGATION
 		if (response.o.navH) {
 			css += "#navToggle { float: left; z-index: 999; background-color: rgba(0,0,0,0); width: 10px !important; height: 600px !important; cursor: pointer !important; }\n";
@@ -97,8 +99,11 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 			css += "[min ~= 'hideN'] .uiUfiAddComment textarea, [min ~= 'hideN']  .uiUfiAddComment .commentBtn { float: none; margin-right: 10px; }\n";
 			css += "[min ~= 'hideN'] .uiUfi, [min ~= 'hideN'] .fbx #fbf-page-head-container { width: auto !important; }\n";
 		}
-		if (response.o.navF || response.o.min)
+		if (response.o.navF || response.o.min) {
 			css += "#leftCol { position: fixed; top: 41px; }\n";
+			css += "#leftCol { height: 100% !important; padding-bottom: 41px !important; overflow: scroll; }\n";
+			css += "#leftCol::-webkit-scrollbar { width: 0px !important; }\n";
+		}
 		if (response.o.n_profile)
 			css += "#pagelet_main_nav { display: none; }\n";
 		if (response.o.n_news)
@@ -123,8 +128,11 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 			css += "#contentArea, .uiUfi { width: 100% !important; }\n";
 			css += "#contentCol { padding-right: 40px }\n";
 		}
-		if ((response.o.sF || response.o.min) && !response.o.fullW)
-			css += "#rightCol { position: fixed; top: 41px; margin-left: 535px; }\n";
+		if ((response.o.sF || response.o.min) && !response.o.fullW) {
+			css += "#rightCol { position: fixed; top: 41px; margin-left: 735px; }\n";
+			css += "#headerArea + #rightCol { margin-left: 535px; }\n";
+			css += "#pagelet_right_sidebar { position: fixed; top: 101px; }\n";
+		}
 		if (response.o.s_events)
 			css += "#pagelet_eventbox { display: none; }\n";
 		if (response.o.s_find)
@@ -132,7 +140,7 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 		if (response.o.s_requests)
 			css += "#pagelet_reqbox { display: none; }\n";
 		if (response.o.s_pokes)
-			css += "#pagelet_pokebox, #pagelet_netego_pokes { display: none; }\n";
+			css += "#pagelet_pokes { display: none; }\n";
 		if (response.o.s_recommended)
 			css += "#pagelet_netego { display: none; }\n";
 		if (response.o.s_people)
@@ -150,8 +158,9 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 		}
 		if (response.o.zoom) {
 			css += "#zoom { position: absolute; min-height:50px; min-width:50px; background:#FFF url(data:image/gif;base64,R0lGODlhEAALALMMAOXp8a2503CHtOrt9L3G2+Dl7vL0+J6sy4yew1Jvp/T2+e/y9v///wAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFCwAMACwAAAAAEAALAAAEK5DJSau91KxlpObepinKIi2kyaAlq7pnCq9p3NZ0aW/47H4dBjAEwhiPlAgAIfkECQsADAAsAAAAAAQACwAABA9QpCQRmhbflPnu4HdJVAQAIfkECQsADAAsAAAAABAACwAABDKQySlSEnOGc4JMCJJk0kEQxxeOpImqIsm4KQPG7VnfbEbDvcnPtpINebJNByiTVS6yCAAh+QQJCwAMACwAAAAAEAALAAAEPpDJSaVISVQWzglSgiAJUBSAdBDEEY5JMQyFyrqMSMq03b67WY2x+uVgvGERp4sJfUyYCQUFJjadj3WzuWQiACH5BAkLAAwALAAAAAAQAAsAAAQ9kMlJq73hnGDWMhJQFIB0EMSxKMoiFcNQmKjKugws0+navrEZ49S7AXfDmg+nExIPnU9oVEqmLpXMBouNAAAh+QQFCwAMACwAAAAAEAALAAAEM5DJSau91KxlpOYSUBTAoiiLZKJSMQzFmjJy+8bnXDMuvO89HIuWs8E+HQYyNAJgntBKBAAh+QQFFAAMACwMAAIABAAHAAAEDNCsJZWaFt+V+ZVUBAA7) no-repeat center center; box-shadow: 0 0 10px rgba(0,0,0,.35), 0 0 20px rgba(0,0,0,.35), 0 0 35px rgba(0,0,0,.35), 0 0 55px rgba(0,0,0,.35); z-index: 99999; padding: 10px; }\n";
-			css += "#zoom div { display: block; position: absolute; top: 10px; left: 0; width: 100%; background-color: rgba(255,255,255,.75); font-weight: bold; }\n";
+			css += "#zoom div { display: block; position: absolute; top: 10px; left: 0; width: 100%; background-color: rgba(255,255,255,.75); font-weight: bold; overflow: hidden; }\n";
 			css += "#zoom div span { display: block; margin: 10px 20px; }\n";
+			css += ".uiTooltipWrap:not(.bottom) { display: none !important; }\n";
 		}
 		if (response.o.f_share)
 			css += "#pagelet_home_stream .UIActionLinks.UIActionLinks_bottom a { display: none; }\n";
@@ -159,6 +168,10 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 			css += "#pagelet_stream_header .uiHeaderActions { display: none; }\n";
 		if (response.o.f_app)
 			css += "#pagelet_home_stream [data-ft *= 'sty\":237'] { display: none; }\n";
+		if (response.o.f_page)
+			css += "#pagelet_home_stream [data-ft *= 'authentic'] { display: none; }\n";
+		if (response.o.f_poll)
+			css += "#pagelet_home_stream [data-ft *= 'sty\":338'], #pagelet_home_stream [data-ft *= 'qa_poll'] { display: none; }\n";
 		if (response.o.f_event)
 			css += "#pagelet_home_stream [data-ft *= 'sty\":1'], #pagelet_home_stream [data-ft *= 'sty\":38'], #pagelet_home_stream [data-ft *= 'sty\":178'] { display: none; }\n";
 		if (response.o.f_friend)

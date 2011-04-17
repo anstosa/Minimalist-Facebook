@@ -57,15 +57,8 @@ chrome.extension.sendRequest({elements: "o"}, function(response) {
 			 } catch(e) { console.error(e); }
 		}
 		if (response.o.f_lf) {
-			var url = document.location.href;
-			var sub = -1;
-				console.log(url);
-					console.log(url.length);
-					if ((sub = url.indexOf("facebook.com")) && (url.substring(25).length == 0 || url.substring(17).length == 0 || url.substring(sub).indexOf("home.php") != -1 || url.substring(sub).indexOf("?rel=") != -1)) {
-					window.location.href = "https://www.facebook.com/?sk=lf";
-					console.log("match");
-
-				}
+			if (document.querySelectorAll(".uiHeaderActions.rfloat.fsl.fwb.fcb a")[0].getAttribute("href") == "/?sk=lf")
+				window.location.href = "https://www.facebook.com/?sk=lf";
 		}
 		if (response.o.full) {
 			var timestamps = document.querySelectorAll("abbr[class = 'timestamp']");

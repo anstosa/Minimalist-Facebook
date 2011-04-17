@@ -98,6 +98,8 @@
   * Hide bottom list
   * Hide Top/Recent
   * Hide Applications stories
+  * Hide Poll/Questions stories
+  * Hide Pages stories
   * Hide event stories
   * Hide friend stories
   * Hide group stories
@@ -142,7 +144,26 @@
 
 == CHANGELOG ==
 
- 
+ == 0.5.8 [16 APR]
+  * Added: Hide Find Friends
+  * Fixed: Floating Sidebar covering top buttons
+  * Fixed: default to Most Recent redirects
+  * Fixed: Home and Profile links in toolbar not hiding correctly
+ == 0.5.7 [12 APR]
+  * Fixed: Buttons not working above floating sidebar
+  * Fixed: Photo zoom for embedded videos showing last photo instead
+ == 0.5.6 [10 APR]
+  * Fixed: Floating sidebar overlapping buttons on profiles
+  * Fixed: Floating sidebar appearing under photos in album overview
+  * Fixed: Photo zoom overlaps name tooltips (hidden, names moved into photo zoom)
+  * Fixed: Photo zoom not applied to recently tagged in profiles
+ == 0.5.5 [7 APR]
+  * Added: Hide Poll/Questions stories
+  * Added: Hide Pages stories
+  * Fixed: Photo zoom appears on full-size photos
+  * Fixed: Pokes not hiding
+  * Fixed: Photo zoom only working on first loaded page.
+  * Fixed: Floating navigation is scrollable when longer than page
  == 0.5.4 [4 APR]
   * Fixed: Layout errors with Hide nav without floating nav
   * Fixed: Custom settings fields not loading from memory
