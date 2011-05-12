@@ -36,14 +36,18 @@ chrome.extension.sendRequest({elements: 'o'}, function(response) {
 				css += "#rightCol { position: fixed;}\n";
 		}
 		if (response.o.backC) {
-			css += "body, .hasLeftCol #pageFooter, #contentCurve, #chatFriendsOnline > div:nth-child(2), #contentCol { background: " + response.o.backCLR + " !important;  background-color: " + response.o.backCLR + " !important; }\n";
+			css += "body, .uiBoxWhite, .MessagingReadHeader, .hasLeftCol #pageFooter, #contentCurve, #chatFriendsOnline > div:nth-child(2), #contentCol { background: " + response.o.backCLR + " !important;  background-color: " + response.o.backCLR + " !important; }\n";
 			css += ".uiSideNav .item, .uiSideNav .subitem { border-bottom: 1px solid transparent; }\n";
 			css += "#chatFriendsOnline input { background-color: #fff; }\n";
+			css += "body.plugin { background: transparent !important; overflow-y: visible !important; }\n";
 		}
 		if (response.o.accent) {
 			css += ".uiComposerWhiteMessageBox .uiComposerMessageBox { background: none; }\n";
 			css += "#blueBar { background: " + response.o.accentCLR + " !important; background-color: " + response.o.accentCLR + " !important; }\n";
 			css += "#pageLogo > a, .jewel > a { background-image: url( " + toolbar + " ) !important; background-color: transparent !important; }\n";
+			css += "#requestsWrapper:not(.openToggler) a {background-position: 0 -63px;}\n";
+			css += "#mailWrapper:not(.openToggler) a {background-position: -50px -96px;}\n";
+			css += "#notificationsWrapper:not(.openToggler) a {background-position:-25px -96px;}\n";
 			css += "#pageNav a:hover, #pageLogo > a:hover, .jewel:not(.openToggler) > a:hover { background-color: rgba(255,255,255,.15) !important; }\n";
 			css += ".hasLeftCol #contentCol, .hasLeftCol #contentCurve, .hasLeftCol #mainContainer, #navSearch .uiTypeahead, #navSearch .uiTypeahead .wrap, #headNav, .fbNubFlyoutTitlebar { border-color: rgba(0,0,0,.5) !important;}\n";
 			css += "#headNav, .fbNubFlyoutTitlebar { background: " + lighten(response.o.accentCLR, 35, 1) + " !important; background-color: " + lighten(response.o.accentCLR, 35, 1) + " !important; }\n";

@@ -144,6 +144,11 @@
 
 == CHANGELOG ==
 
+ == 0.5.10 [12 MAY]
+  * Fixed: Background color not applied to certain elements (Thanks Ahmad)
+  * Fixed: Background color applied to social plugins (Thanks again Ahmad)
+ == 0.5.9 [3 MAY]
+  * Fixed: Icons graphics broken in toolbar
  == 0.5.8 [16 APR]
   * Added: Hide Find Friends
   * Fixed: Floating Sidebar covering top buttons
